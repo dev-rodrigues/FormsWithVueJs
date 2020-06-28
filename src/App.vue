@@ -42,7 +42,7 @@
               type="number"
               class="form-control"
               placeholder="Sua idade"
-              v-model="desenvolvedor.idade">
+              v-model.number="desenvolvedor.idade">
             </div>
 
             <div class="form-group">
