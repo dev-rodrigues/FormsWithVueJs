@@ -50,12 +50,20 @@
               <p>Gênero:</p>
 
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="Masculino">
+                <input
+                type="radio"
+                class="form-check-input"
+                value="Masculino"
+                v-model="desenvolvedor.genero">
                 <label class="form-check-label">Masculino</label>
               </div>
 
               <div class="form-check form-check-inline">
-                <input type="radio" class="form-check-input" value="Feminino">
+                <input
+                type="radio"
+                class="form-check-input"
+                value="Feminino"
+                v-model="desenvolvedor.genero">
                 <label class="form-check-label">Feminino</label>
               </div>
 
@@ -138,7 +146,7 @@
                 <strong>Idade: </strong> {{desenvolvedor.idade}}
               </li>
               <li class="list-group-item">
-                <strong>Gênero:</strong>
+                <strong>Gênero:</strong> {{desenvolvedor.genero}}
               </li>
               <li class="list-group-item">
                 <strong>Ocupação:</strong>
@@ -181,6 +189,7 @@ export default {
         email: '',
         idade: 25,
         biografia: 'Fale Sobre Você...',
+        genero: 'Masculino',
       },
     };
   },
