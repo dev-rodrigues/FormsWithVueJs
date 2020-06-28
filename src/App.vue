@@ -16,7 +16,8 @@
 
           <h3>Preencha abaixo</h3>
 
-          <form>
+          <!--<form>-->
+          <form @submit.prevent="enviar">
 
             <div class="form-group">
               <label>Nome:</label>
@@ -147,7 +148,8 @@
             </div>
 
             <button class="btn btn-secondary">Resetar</button>
-            <button class="btn btn-success">Enviar</button>
+            <!--<button class="btn btn-success" type="button" @click="enviar">Enviar</button>-->
+            <button class="btn btn-success" type="submit">Enviar</button>
 
           </form>
 
@@ -235,6 +237,13 @@ export default {
         'Teste 6',
       ],
     };
+  },
+  methods: {
+    enviar() {
+      // eslint-disable-next-line prefer-object-spread
+      const formularioEnviado = Object.assign({}, this.desenvolvedor);
+      console.log(formularioEnviado);
+    },
   },
 };
 
