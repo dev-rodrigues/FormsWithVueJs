@@ -24,7 +24,7 @@
               type="text"
               class="form-control"
               placeholder="Seu nome"
-              v-model="desenvolvedor.nome">
+              v-model.trim.lazy="desenvolvedor.nome">
             </div>
 
             <div class="form-group">
@@ -33,7 +33,7 @@
               type="email"
               class="form-control"
               placeholder="Seu email"
-              v-model="desenvolvedor.email">
+              v-model.lazy="desenvolvedor.email">
             </div>
 
             <div class="form-group">
