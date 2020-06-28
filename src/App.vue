@@ -17,7 +17,7 @@
           <h3>Preencha abaixo</h3>
 
           <!--<form>-->
-          <form @submit.prevent="enviar">
+          <form @submit.prevent="enviar" @reset="resetar">
 
             <div class="form-group">
               <label>Nome:</label>
@@ -147,7 +147,7 @@
 
             </div>
 
-            <button class="btn btn-secondary">Resetar</button>
+            <button class="btn btn-secondary" type="reset">Resetar</button>
             <!--<button class="btn btn-success" type="button" @click="enviar">Enviar</button>-->
             <button class="btn btn-success" type="submit">Enviar</button>
 
@@ -218,7 +218,9 @@
 export default {
   data() {
     return {
-      desenvolvedor: {
+      // eslint-disable-next-line key-spacing
+      desenvolvedor:{},
+      valoresPadrao: {
         nome: '',
         email: '',
         idade: 25,
@@ -244,6 +246,14 @@ export default {
       const formularioEnviado = Object.assign({}, this.desenvolvedor);
       console.log(formularioEnviado);
     },
+    resetar() {
+      // eslint-disable-next-line prefer-object-spread
+      this.desenvolvedor = Object.assign({}, this.valoresPadrao);
+      console.log(this.desenvolvedor);
+    },
+  },
+  created() {
+    this.resetar();
   },
 };
 
