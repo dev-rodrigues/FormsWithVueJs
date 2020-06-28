@@ -97,7 +97,8 @@
               <label>Resumo de perfil:</label>
               <textarea
               class="form-control"
-              placeholder="Conte-nos um pouco sobre você...">
+              placeholder="Conte-nos um pouco sobre você..."
+              v-model="desenvolvedor.biografia">
               </textarea>
             </div>
 
@@ -147,6 +148,7 @@
               </li>
               <li class="list-group-item">
                 <strong>Biografia:</strong>
+                <pre>{{desenvolvedor.biografia}}</pre>
               </li>
               <li class="list-group-item">
                 <strong>Receber notificações?</strong>
@@ -178,6 +180,7 @@ export default {
         nome: '',
         email: '',
         idade: 25,
+        biografia: 'Fale Sobre Você...',
       },
     };
   },
