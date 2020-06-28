@@ -134,6 +134,16 @@
             </div>
 
             <div class="form-group">
+              <AppRang
+              label="Salário esperado"
+              v-model.number="desenvolvedor.salario"
+              min="1000"
+              max="15000"
+              step="500"
+              inputClasses="form-control-range"/>
+            </div>
+
+            <div class="form-group">
 
               <div class="form-check form-check-inline">
                 <input
@@ -215,7 +225,13 @@
 </template>
 
 <script>
+
+import AppRang from './components/Range.vue';
+
 export default {
+  components: {
+    AppRang,
+  },
   data() {
     return {
       // eslint-disable-next-line key-spacing
@@ -229,6 +245,7 @@ export default {
         tecnologias: [],
         ocupacao: '',
         notificacoes: 'Não',
+        salario: 0,
       },
       ocupacoes: [
         'Teste 1',
