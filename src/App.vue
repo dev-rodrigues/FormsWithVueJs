@@ -71,8 +71,16 @@
 
             <div class="form-group">
               <label>Ocupação:</label>
-              <select class="form-control" placeholder="Seu email">
-                <option>Selecione uma opção...</option>
+              <select
+              class="form-control"
+              v-model="desenvolvedor.ocupacao">
+                <option value="" disabled>Selecione</option>
+                <option
+                v-for="(ocupacao, indice) in ocupacoes"
+                :key="indice"
+                :value="ocupacao">
+                {{ocupacao}}
+                </option>
               </select>
             </div>
 
@@ -168,7 +176,7 @@
                 <strong>Gênero:</strong> {{desenvolvedor.genero}}
               </li>
               <li class="list-group-item">
-                <strong>Ocupação:</strong>
+                <strong>Ocupação:</strong> {{desenvolvedor.ocupacao}}
               </li>
               <li class="list-group-item">
                 <strong>Tecnologias:</strong>
@@ -215,8 +223,17 @@ export default {
         biografia: 'Fale Sobre Você...',
         genero: 'Masculino',
         tecnologias: [],
+        ocupacao: '',
         notificacoes: 'Não',
       },
+      ocupacoes: [
+        'Teste 1',
+        'Teste 2',
+        'Teste 3',
+        'Teste 4',
+        'Teste 5',
+        'Teste 6',
+      ],
     };
   },
 };
