@@ -3,7 +3,7 @@
         <label>{{customLabel}}</label>
         <input
         type="range"
-        :value="value"
+        :value="valor"
         v-bind="$attrs"
         :class="inputClasses"
         @input="atualizar">
@@ -13,14 +13,17 @@
 <script>
 export default {
   inheritAttrs: false,
+  model: {
+    prop: 'valor',
+  },
   props: {
-    value: [Number, String],
+    valor: [Number, String],
     label: String,
     inputClasses: [String, Object, Array],
   },
   data() {
     return {
-      valorAtual: this.value || this.$attrs.min,
+      valorAtual: this.valor || this.$attrs.min,
     };
   },
   computed: {
